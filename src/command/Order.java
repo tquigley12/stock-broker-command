@@ -7,4 +7,10 @@ package command;
 public interface Order {
 
     void execute();
+    
+    /**
+     * Add method to undo.  This can be used in the BuyStock and SellStock classes.
+     */
+    void undo();
+    
 }

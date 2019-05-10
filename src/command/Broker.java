@@ -19,6 +19,17 @@ public class Broker {
         for (Order order : orderList) {
             order.execute();
         }
+   
         orderList.clear();
     }
+    
+    /**
+     * Undo Stack in the Invoker class
+     */
+    public void undo() {
+        if (!orderList.isEmpty()) {
+            orderList.remove(orderList.size() - 1).undo();
+        }
+    }
+
 }

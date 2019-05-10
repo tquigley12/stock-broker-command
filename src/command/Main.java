@@ -13,6 +13,13 @@ public class Main {
         broker.takeOrder(sellStockOrder);
 
         broker.placeOrders();
+        
+        System.out.println("Begin undoing...");
+
+        for (int i = 0; i < 10; i++) {
+            broker.undo();
+        }
+        
     }
 
 }
